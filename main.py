@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-i = 149010
+i = 140001
 
 while i<=164004:
     if (i-1)%100==10:
