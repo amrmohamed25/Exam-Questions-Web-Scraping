@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 i = 140001
-
+totalQuestions=0
 while i<=164004:
     if (i-1)%100==10:
         #11-10=01
@@ -15,6 +15,7 @@ while i<=164004:
     data = []
     i+=1
     for data in soup.select(".bix-div-container"):
+        totalQuestions +=1
         print()
         print(data.select_one(".bix-td-qtxt").get_text(strip=True))
         m=0
@@ -25,4 +26,5 @@ while i<=164004:
             m+=1
         print()
         print("Answer is: "+ data.select_one(".jq-hdnakq")["value"])
+print("Total number of questions is "+str(totalQuestions)+" Questions")
 
